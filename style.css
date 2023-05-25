@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1e1e1e;
+}
+
+.container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.leftside {
+    display: flex;
+    flex-direction: column;
+    gap: 7.875rem;
+}
+
+.logo {
+    height: 7.25rem;
+    margin: 2.5rem;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    margin: 0 4.625rem 12.125rem 4.625rem;
+    border-radius: .25rem;
+    width: 35.75rem;
+    background-color: #24221f;
+}
+
+header, main {
+    margin-left: 7.5rem;
+}
+
+header {
+    margin-top: 3.4375rem;
+}
+
+header h1 {
+    background: url("./images/log-in.svg") no-repeat left;
+    padding-left: 2.125rem;
+    font: normal 600 1.5rem/2.25rem "Roboto", sans-serif;
+    color: #d4ccb6;
+}
+
+header p, .email label, .senha label, main .checkbox {
+    font: normal 500 1rem/1.5rem "Poppins", sans-serif;
+    color: #afb6c2;
+}
+
+.email input {
+    background: #24221f url("./images/mail2.svg") no-repeat 3%;
+    width: 20.9375rem;
+    height: 2.75rem;
+    padding-left: 2.3125rem;
+    margin-bottom: 1.25rem;
+    font: normal 400 .875rem/1.0256rem "Roboto", sans-serif;
+    color: #a9afb9;
+    border: 1px solid #868686;
+    border-radius: .25rem;
+    outline: none;
+}
+
+.email input:focus-within {
+    background: #24221f url("./images/mail.svg") no-repeat 3%;
+    border: 1px solid #FFC632;
+}
+
+.senha input {
+    background: #24221f url("./images/lock.svg") no-repeat 3%;
+    width: 20.9375rem;
+    height: 2.75rem;
+    padding-left: 2.3125rem;
+    margin-bottom: 1.25rem;
+    font: normal 400 .875rem/1.0256rem "Roboto", sans-serif;
+    border: 1px solid #868686;
+    color: #a9afb9;
+    border-radius: .25rem;
+    outline: none;
+}
+
+.senha input:focus-within {
+    background: #24221f url("./images/lock2.svg") no-repeat 3%;
+    border: 1px solid #FFC632;
+}
+
+.checkbox {
+    position: relative;
+    padding-left: 1.5625rem;
+    cursor: pointer;
+}
+
+.checkbox input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.check {
+    left: 0;
+    top: 0;
+    width: 1.25rem;
+    height: 1.25rem;
+    background: #24221f;
+    border: 1px solid #868686;
+    border-radius: .25rem;
+    position: absolute;
+}
+
+.checkbox input:checked ~ .check {
+    background: #FFC632;
+}
+
+.checkbox .check:after {
+    top: 0;
+    left: .2813rem;
+    width: .3125rem;
+    height: .625rem;
+    border: 1px solid black;
+    border-width: 0 .1875rem .1875rem 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.check:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox input:checked ~.check:after {
+    display: block;
+}
+
+main .forgot {
+    padding-left: 4.6875rem;
+    text-decoration: none;
+    font: normal 600 .875rem/1.3125rem "Poppins", sans-serif;
+    color: #FFC632;
+}
+
+main button {
+    width: 20.875rem;
+    height: 3.1875rem;
+    margin: 1.25rem 0 .875rem 0;
+    padding: .75rem 1.5rem;
+    background-color: #FFC632;
+    border-radius: .25rem;
+    font: normal 600 1.125rem/1.6875rem "Poppins", sans-serif;
+    letter-spacing: 1.5%;
+    color: #473404;
+    outline: none;
+}
+
+main p {
+    margin: 0 0 3.4375rem 4.0625rem;
+    font: normal 400 .875rem/1.3125rem "Poppins", sans-serif;
+    color: #FFC632;
+}
+
+main p a {
+    text-decoration: none;
+    font: normal 600 .875rem/1.3125rem "Poppins", sans-serif;
+    color: #FFC632;
+}
+
+.rightside {
+    background: url("images/side-image.png") no-repeat center;
+    background-size: cover;
+    object-fit: cover;
+}
+
+@media (max-width: 1200px), (max-width: 375px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .logo {
+        display: none;
+    }
+
+    header {
+        background: url("./images/logo.png") no-repeat top left;
+        padding-top: 6.125rem;
+    }
+
+    .login {
+        background: none;
+        align-self: center;
+    }
+
+    .rightside {
+        display: none;
+    }
+}
